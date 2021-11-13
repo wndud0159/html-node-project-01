@@ -21,7 +21,7 @@ if (prod) {
     app.use(hpp());
     app.use(morgan('combined'));
     app.use(cors({
-        origin: 'http://ec2-3-217-246-87.compute-1.amazonaws.com',
+        origin: 'https://waitinglist.iback.co',
         credentials: true,
     }));
 } else {
