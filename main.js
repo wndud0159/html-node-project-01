@@ -21,7 +21,7 @@ if (prod) {
     app.use(hpp());
     app.use(morgan('combined'));
     app.use(cors({
-        origin: 'domain',
+        origin: 'http://ec2-3-217-246-87.compute-1.amazonaws.com',
         credentials: true,
     }));
 } else {
