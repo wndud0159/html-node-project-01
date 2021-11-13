@@ -1,0 +1,44 @@
+/* ./your-css-folder/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.iback_ff {
+    font-family: Spoqa Han Sans Neo !important;
+}
+
+.bg_primary {
+    background-color: #FFFFFF;
+}
+.bg_light {
+    background-color: #F3F3CA;
+}
+.iback_primary {
+    color: #004741;
+}
+.iback_bg_light {
+    background-color: #315753;
+}
+
+.bg_img_share {
+    background-image: url("/backgroundIMG.png");
+}
+
+
+.iback_bg_primary {
+    background-color: #004741;
+}
+
+.iback_dark {
+    color: #231F20;
+}
+
+.iback_light {
+    color: #315753;
+}
+.iback_lighter {
+    color: #FFFFFF;
+}
+.bg_img {
+    background-image: url("/backgroundIMG.png");
+}
