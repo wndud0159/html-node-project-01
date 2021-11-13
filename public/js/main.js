@@ -17,3 +17,6 @@ const onEmailSubmitHandler = (e) => {
         console.log("create error: ", error)
     })
 }
+
+const form = document.getElementById('form');
+form.addEventListener('submit', onEmailSubmitHandler);
