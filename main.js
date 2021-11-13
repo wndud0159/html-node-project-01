@@ -4,7 +4,6 @@ const cors = require("cors");
 const hpp = require('hpp');
 const path = require("path")
 const helmet = require('helmet');
-const csp = require('helmet-csp')
 const dotenv = require('dotenv');
 
 const prod = process.env.NODE_ENV === 'production';
@@ -19,25 +18,12 @@ db.sequelize.sync({ force: true }); // 기존 데이터 다 날리고 새로만�
 
 if (prod) {
     app.use(helmet());
-    app.use(
-        csp({
-            directives: {
-            defaultSrc: ["'self'"],
-            styleSrc: ["'self'"],
-            scriptSrc: ["'self'"],
-            },
-        })
-    );
     app.use(hpp());
     app.use(morgan('combined'));
     app.use(cors({
         origin: 'https://waitinglist.iback.co',
         credentials: true,
     }));
-    app.use(function(req, res, next) { 
-        res.setHeader( 'Content-Security-Policy', "script-src 'self' https://unpkg.com/axios/dist/axios.min.js" ); 
-        next(); 
-    })
 } else {
     app.use(morgan('dev'));
     app.use(cors({
