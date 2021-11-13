@@ -25,7 +25,7 @@
                 <div>웨이팅 리스트에 등록되었습니다.</div>
             </div>
             <div class="flex flex-col items-center text-lg md:px-0 overflow-hidden">
-                <input readonly id="message" class="bg-transparent text-center text-blue-500 py-2 rounded-lg"/>
+                <input readonly id="message" class="bg-transparent  w-full md:w-96 text-center text-blue-500 py-2"/>
                 <div class="bg_primary w-full md:w-96 flex  py-10  rounded-lg mb-4">
                     <div class="flex-1 md:pl-8 pl-4  font-bold space-y-5 ">
                         <div>이름</div>
@@ -34,12 +34,12 @@
                     <div class="md:w-7/12 -mb-12 w-8/12 font-semibold space-y-5">
                         <input class="bg-transparent" type="text" readonly id="name">
                         <input class="bg-transparent" type="email" readonly id="email">
-                        <div class="bg-transparent text-white" id="ibackURL">http://iback.co</div>
+                        <div class="bg-transparent text-white" id="ibackURL">https://waitinglist.iback.co</div>
                     </div>
                 </div>
                 <div class="iback_lighter md:w-96 w-full flex flex-col space-y-4 font-light">
                     <a href="/" class="iback_bg_primary text-center py-2 font-normal rounded-lg">입력한 내용 수정하기</a>
-                    <button onclick="copy()" class="iback_bg_primary py-2 rounded-lg">친구에게 공유하기<i class="fas fa-share-square ml-3"></i></button>
+                    <button id="copyButton" class="iback_bg_primary py-2 rounded-lg">친구에게 공유하기<i class="fas fa-share-square ml-3"></i></button>
                 </div>
             </div>
         </div>

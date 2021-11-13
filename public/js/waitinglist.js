@@ -30,6 +30,10 @@
             document.execCommand("copy"); //복사
             sel.removeRange(range); //선택 정보 삭제
 
-            alert('test');
-            document.querySelector("#message").value = 'Copied! 링크를 공유하세요.'
+            document.querySelector("#message").value = 'Copied! 링크를 공유하세요!'
         }
+
+const copyButton = document.getElementById('copyButton')
+
+copyButton.addEventListener("click", copy)
+        
