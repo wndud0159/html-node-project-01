@@ -35,7 +35,7 @@ if (prod) {
         credentials: true,
     }));
     app.use(function(req, res, next) { 
-        res.setHeader( 'Content-Security-Policy', "script-src 'self' https://cdnjs.cloudflare.com" ); 
+        res.setHeader( 'Content-Security-Policy', "script-src 'self' https://unpkg.com/axios/dist/axios.min.js" ); 
         next(); 
     })
 } else {
