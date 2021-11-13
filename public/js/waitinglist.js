@@ -40,7 +40,7 @@
                 content: {
                 title: '아이백',
                 description: '곧 출시될 아이백 서비스의 웨이팅 리스트에 등록하세요!',
-                imageUrl: 'https://waitinglist.iback.co/iback_main_image.png',
+                imageUrl: 'https://waitinglist.iback.co/iback_main_image01.png',
                 link: {
                     mobileWebUrl: 'https://waitinglist.iback.co',
                     webUrl: 'https://waitinglist.iback.co',
