@@ -34,9 +34,9 @@
         //     alert('복사 되었습니다. 친구에게 링크를 공유해보세요!')
         // }
 
-        Kakao.init('27c3bac20c362a640406590367df687d');
-        Kakao.Link.createDefaultButton({
-            container: '#kakao_share',
+Kakao.init('27c3bac20c362a640406590367df687d');
+function kakaoShare() { 
+        Kakao.Link.sendDefault({
             objectType: 'feed',
             content: {
             title: '아이백',
@@ -57,10 +57,10 @@
             },
             ],
         })
-   
+    }
         
 
-// const copyButton = document.getElementById('copyButton')
+const copyButton = document.getElementById('kakaoShare')
 
-// copyButton.addEventListener("click", test)
+copyButton.addEventListener("click", kakaoShare)
         
