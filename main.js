@@ -13,8 +13,8 @@ const app = express();
 const PORT = process.env.NODE_ENV === 'production' ? process.env.PORT : 8080
 
 dotenv.config();
-// db.sequelize.sync();
-db.sequelize.sync({ force: true }); // 기존 데이터 다 날리고 새로만듬
+db.sequelize.sync();
+// db.sequelize.sync({ force: true }); // 기존 데이터 다 날리고 새로만듬
 
 if (prod) {
     app.use(helmet());
