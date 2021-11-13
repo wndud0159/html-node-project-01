@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <title>iback</title>
 </head>
 <body class="iback_ff">
@@ -115,19 +114,6 @@
                     document.querySelector("#message").value = response.data.message
                     return
                 }
-                // emailjs.init('user_zvqrtyCDCSrNPEP6Vbw99');
-                // const params = {
-                //     from_name: '아이백',
-                //     to_name: response.data.list.name,
-                //     email: response.data.list.email,
-                //     message: 'test'
-                // }
-                // emailjs.send('iback_business_alliance', 'template_u2ara8p', params)
-                // .then((result) => {
-                //     console.log(result.text)
-                // }).catch((error) => {
-                //     console.log(error.text)
-                // })
                 window.location.replace(`/waitinglist?id=${response.data.list.id}`);
             }).catch(error => {
                 console.log("create error: ", error)
