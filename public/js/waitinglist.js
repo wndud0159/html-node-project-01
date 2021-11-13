@@ -34,7 +34,34 @@
             alert('복사 되었습니다. 친구에게 링크를 공유해보세요!')
         }
 
+        function kakaoShare() {
+            Kakao.Link.sendDefault({
+                objectType: 'feed',
+                content: {
+                title: '아이백',
+                description: '곧 출시될 아이백 서비스의 웨이팅 리스트에 등록하세요!',
+                imageUrl: 'https://waitinglist.iback.co/iback_logo.png',
+                link: {
+                    mobileWebUrl: 'https://waitinglist.iback.co',
+                    webUrl: 'https://waitinglist.iback.co',
+                },
+                },
+                buttons: [
+                {
+                    title: '웹으로 보기',
+                    link: {
+                    mobileWebUrl: 'https://waitinglist.iback.co',
+                    webUrl: 'https://waitinglist.iback.co',
+                    },
+                },
+                ],
+                // 카카오톡 미설치 시 카카오톡 설치 경로이동
+                installTalk: true,
+            })
+        }
+
+Kakao.init('27c3bac20c362a640406590367df687d');
 const copyButton = document.getElementById('copyButton')
 
-copyButton.addEventListener("click", copy)
+copyButton.addEventListener("click", kakaoShare)
         
