@@ -34,6 +34,10 @@ if (prod) {
         origin: 'https://waitinglist.iback.co',
         credentials: true,
     }));
+    app.use(function(req, res, next) { 
+        res.setHeader( 'Content-Security-Policy', "script-src 'self' https://cdnjs.cloudflare.com" ); 
+        next(); 
+    })
 } else {
     app.use(morgan('dev'));
     app.use(cors({
@@ -45,6 +49,7 @@ if (prod) {
 app.use("/", express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
 
 
 app.get("/", (req, res) => {
