@@ -7,6 +7,7 @@
     <link href="/tailwind.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script defer src="/js/axios.min.js"></script>
     <script defer src="/js/main.js"></script>
     <title>iback</title>
@@ -92,7 +93,11 @@
                 <div>아이백이 12월 출시됩니다.</div>
             </div>
             <div class="iback_dark md:text-2xl text-lg text-center ">
-                <div>어떤 서비스가 출시될지 궁금하다면 이메일을 입력해주세요.</div>
+                <div class="md:flex hidden justify-center">어떤 서비스가 출시될지 궁금하다면 이메일을 입력해주세요.</div>
+                <div class="md:hidden text-center">
+                    <div>어떤 서비스가 출시될지 궁금하다면 이메일을</div>
+                    <div>입력해주세요.</div>
+                </div>
                 <div>출시 일정에 맞춰 안내 메일을 보내드릴게요!</div>
             </div>
             <form id="form" class="items-center text-lg flex flex-col space-y-2">
