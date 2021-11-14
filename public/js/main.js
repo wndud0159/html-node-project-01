@@ -13,6 +13,8 @@ const onEmailSubmitHandler = (e) => {
             document.querySelector("#message").value = response.data.message
             return
         }
+        document.querySelector('#isButton').style.display = 'none'
+        document.querySelector('#isNotButton').style.display = 'block'
         var templateParams = {
             to_name: response.data.list.name,
             from_name: '아이백',
