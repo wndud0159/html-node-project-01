@@ -2,6 +2,12 @@ module.exports = (sequelize, DataTypes) => {
     const WaitingList = sequelize.define(
         "WaitingList",
         {
+            id: {
+                type: DataTypes.UUID,
+                defaultValue: DataTypes.UUIDV4,
+                allowNull: false,
+                primaryKey: true
+            },
             name: {
                 type: DataTypes.STRING(40),
                 allowNull: false
