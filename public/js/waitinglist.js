@@ -8,7 +8,8 @@
                         console.log(response.data.message)
                         return
                     }
-                    document.querySelector("#name").value = response.data.list.name
+                    document.querySelectorAll("#name")[0].value = response.data.list.name
+                    document.querySelectorAll("#name")[1].value = response.data.list.name
                     document.querySelector("#email").value = response.data.list.email
                 }).catch(error => {
                     console.log('get waitinglist error : ', error)
