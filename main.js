@@ -16,19 +16,20 @@ dotenv.config();
 db.sequelize.sync();
 // db.sequelize.sync({ force: true }); // 기존 데이터 다 날리고 새로만듬
 
-const cspOptions = {
-    directives: {
-        // 기본 옵션을 가져옵니다.
-        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+// const cspOptions = {
+//     directives: {
+//         // 기본 옵션을 가져옵니다.
+//         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
 
-        "script-src": ["'self'", "*.kakao.com", "'unsafe-inline'"],
-    }
-}
+//         "script-src": ["'self'", "*.kakao.com", "'unsafe-inline'"],
+
+//     }
+// }
 
 if (prod) {
     // Helmet의 모든 기능 사용. (contentSecurityPolicy에는 custom option 적용)
     app.use(helmet({
-        contentSecurityPolicy: cspOptions,
+        contentSecurityPolicy: false,
     }));
     app.use(hpp());
     app.use(morgan('combined'));
