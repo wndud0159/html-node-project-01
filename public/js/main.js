@@ -18,7 +18,7 @@ const onEmailSubmitHandler = (e) => {
         var templateParams = {
             to_name: response.data.list.name,
             from_name: '빅웨이브',
-            iback_modified: 'https://waitinglist.iback.co',
+            iback_modified: `https://waitinglist.iback.co/waitinglist?id=${response.data.list.id}`,
             iback_share: `https://waitinglist.iback.co/waitinglist?id=${response.data.list.id}`,
             to_email: response.data.list.email
         };

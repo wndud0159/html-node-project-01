@@ -115,7 +115,40 @@ app.post('/create', async (req, res) => {
             message: "Success"
         })
     } catch (error) {
-        console.error('create error: ', error)
+        console.error('Create Error: ', error)
+        return res.json({
+            error: true,
+            message: "Server Error"
+        })
+    }
+})
+
+app.put('/update', async (req, res) => {
+    try {
+        await db.WaitingList.update(
+            {
+                name: req.body.name,
+                email: req.body.email,
+            },
+            {
+                where: {
+                    id: req.body.id
+                }
+            }
+        )
+
+        // const list = {
+        //     name: req.body.name,
+        //     email: req.body.email,
+        //     id: req.body.id
+        // }
+
+        res.json({
+            error: false,
+            message: "Update Success",
+        })
+    } catch (error) {
+        console.error('Update Error : ', error)
         return res.json({
             error: true,
             message: "Server Error"

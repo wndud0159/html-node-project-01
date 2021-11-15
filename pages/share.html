@@ -13,7 +13,7 @@
     <title>iback</title>
 </head>
 <body class="iback_ff">
-    <div class="bg_img">
+    <div class="bg_img relative">
         <div class=" flex flex-col md:pt-16 md:pb-72 pt-10 pb-56 md:px-0 px-3">
             <!-- logo -->
             <div class="flex justify-center items-center space-x-3">
@@ -37,10 +37,19 @@
                     </div>
                 </div>
                 <div class="iback_lighter md:w-96 w-full flex flex-col space-y-4 font-light">
-                    <a href="/" class="iback_bg_primary text-center py-2 font-normal rounded-lg">입력한 내용 수정하기</a>
+                    <button id="openButton" class="iback_bg_primary py-2 rounded-lg">입력한 내용 수정하기</button>
                     <button id="kakaoShare" class="iback_bg_primary py-2 rounded-lg">친구에게 공유하기<i class="fas fa-share-square ml-3"></i></button>
                 </div>
             </div>
+        </div>
+        <div id="modal" class="fixed hidden inset-0 h-screen w-full justify-center items-center">
+            <div class="fixed inset-0 bg-black opacity-80"></div>
+            <form id="form" class="items-center w-full mx-3 md:w-96 bg-white z-30 py-3 px-3 text-lg flex flex-col space-y-2">
+                <input  class=" border w-full text-center rounded-md py-2" type="text" required placeholder="이름">
+                <input  class=" border w-full text-center rounded-md py-2" type="email" required placeholder="이메일 주소">
+                <button type="submit" class=" w-full text-center rounded-md py-2 iback_bg_light iback_lighter" >수정</button>
+                <button type="button" id="closeButton" class=" w-full text-center rounded-md py-2 bg-gray-400 iback_lighter">취소</button>
+            </form>
         </div>
     </div>
 </body>

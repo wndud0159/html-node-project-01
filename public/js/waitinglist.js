@@ -45,7 +45,43 @@ Kakao.Link.createDefaultButton({
     },
     ],
 })
-        
+
+const onCloseModal = () => {
+    modal.style.display = 'none'
+}
+
+const onOpenModal = () => {
+    modal.style.display = 'flex'
+}
+
+const onPutWaitingList = async (e) => {
+    e.preventDefault();
+    
+    axios.put('/update', {
+        id: getParameterByName('id'),
+        name: e.target[0].value,
+        email: e.target[1].value
+    }).then(response => {
+        if (response.data.error) {
+            console.log(response.data.message)
+            return
+        }
+        console.log('Update Success: ', response.data)
+        window.location.reload();
+    }).catch(error => {
+        console.log('onPutWaitingList method error: ', error)
+    })
+    
+
+}
+
+const form = document.querySelector('#form')
+const modal = document.querySelector('#modal')
+const closeButton = document.querySelector("#closeButton")
+const openButton = document.querySelector('#openButton')
+
+form.addEventListener('submit', onPutWaitingList)
+closeButton.addEventListener('click', onCloseModal)
+openButton.addEventListener('click', onOpenModal)
 
 
-        
