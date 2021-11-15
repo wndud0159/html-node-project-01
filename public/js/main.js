@@ -17,9 +17,9 @@ const onEmailSubmitHandler = (e) => {
         document.querySelector('#isNotButton').style.display = 'block'
         var templateParams = {
             to_name: response.data.list.name,
-            from_name: '아이백',
-            message: '아이백 서비스를 지인에게 소개해주세요.',
-            iback_url: 'waitinglist.iback.co',
+            from_name: '빅웨이브',
+            iback_modified: 'https://waitinglist.iback.co',
+            iback_share: `https://waitinglist.iback.co/waitinglist?id=${response.data.list.id}`,
             to_email: response.data.list.email
         };
         
