@@ -1,8 +1,15 @@
 emailjs.init("user_zvqrtyCDCSrNPEP6Vbw99");
+
+
+
+
 const onEmailSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(e.target[0].value)
-    console.log(e.target[1].value)
+    if (!/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/.test(e.target[1].value)) {
+        document.querySelector("#message").value = '이메일 형식이 정확하지 않습니다.'
+        return
+    }
+    
 
     axios.post('/create', {
         name: e.target[0].value,
