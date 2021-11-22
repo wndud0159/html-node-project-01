@@ -50,6 +50,34 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 
+app.get("/bigwavvAdmin", (req, res) => {
+    return res.sendFile(path.join(__dirname, "pages/admin.html"))
+})
+
+app.post('/bigwavvAdmin', async (req, res) => {
+    try {
+        if(process.env.ADMIN_PASSWORD === req.body.password) {
+            const waitingList = await db.WaitingList.findAll();
+            return res.json({
+                error: false,
+                message: 'Success',
+                list: waitingList
+            })
+        } else {
+           return res.json({
+                error: true,
+                message: 'Passwords do not match'
+            })
+        }
+    } catch(error) {
+        console.log('bigwavvAdmin error : ', error)
+        return res.json({
+            error: true,
+            message: "Server Error"
+        })
+    }
+})
+
 
 app.get("/", (req, res) => {
     return res.sendFile(path.join(__dirname, "pages/index.html"));

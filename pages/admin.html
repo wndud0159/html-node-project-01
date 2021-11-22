@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" />
+    <link href="/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script defer src="/js/axios.min.js"></script>
+    <script defer src="/js/admin.js"></script>
+    <title>iback</title>
+</head>
+<body>
+    <div class=" flex flex-col justify-center items-center h-screen">
+        <form id="form" class="w-full flex flex-col items-center space-y-3 px-3 text-2xl">
+            <input class="w-full md:w-96 text-center border border-gray-500 py-3" type="password" placeholder="password" required>
+            <button class="w-full md:w-96 text-center rounded-md py-2 iback_bg_light iback_lighter" type="submit">확인</button>
+        </form>
+        <div id="waitinglistform" class="w-full md:w-96 md:px-0 px-03 hidden">
+            <div class=" flex justify-center items-center text-2xl border-b border-t border-gray-500 px-3 py-3">
+                <div class="border-r border-gray-500 flex-1 text-center">성함</div>
+                <div class=" w-8/12 text-center">이메일</div>
+            </div>
+            <div id="waitinglist">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
